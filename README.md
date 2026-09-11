@@ -6,7 +6,7 @@ A free, offline-first 3×3 web app: paint or scan your cube, get a solution with
 animated 3D walkthrough, learn the beginner method, drill verified algorithms, and time
 your solves — no account, no server, your data never leaves the device.
 
-**Live demo:** https://GITHUB_USER.github.io/cubelab/
+**Live demo:** https://DLinacre.github.io/cubelab/
 
 ## Features
 
