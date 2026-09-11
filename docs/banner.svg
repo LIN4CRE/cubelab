@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1120"/>
+      <stop offset="0.55" stop-color="#070b16"/>
+      <stop offset="1" stop-color="#0a1020"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.85" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.1" cy="0.95" r="0.7">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#glowA)"/>
+  <rect width="1280" height="640" fill="url(#glowB)"/>
+
+  <!-- Isometric cube: three faces sharing apex (197.3, 0), tile grid 228px -->
+  <g transform="translate(185,168) scale(0.85)">
+    <!-- left face (green/blue) -->
+    <g transform="matrix(-0.866,0.5,0,1,197.3,0)">
+      <rect x="0" y="0" width="228" height="228" fill="#10131c"/>
+      <rect x="10" y="10" width="64" height="64" fill="#43a047"/>
+      <rect x="82" y="10" width="64" height="64" fill="#1e88e5"/>
+      <rect x="154" y="10" width="64" height="64" fill="#43a047"/>
+      <rect x="10" y="82" width="64" height="64" fill="#1e88e5"/>
+      <rect x="82" y="82" width="64" height="64" fill="#43a047"/>
+      <rect x="154" y="82" width="64" height="64" fill="#1e88e5"/>
+      <rect x="10" y="154" width="64" height="64" fill="#43a047"/>
+      <rect x="82" y="154" width="64" height="64" fill="#1e88e5"/>
+      <rect x="154" y="154" width="64" height="64" fill="#43a047"/>
+    </g>
+    <!-- right face (red/orange) -->
+    <g transform="matrix(0.866,0.5,0,1,197.3,0)">
+      <rect x="0" y="0" width="228" height="228" fill="#10131c"/>
+      <rect x="10" y="10" width="64" height="64" fill="#e53935"/>
+      <rect x="82" y="10" width="64" height="64" fill="#fb8c00"/>
+      <rect x="154" y="10" width="64" height="64" fill="#e53935"/>
+      <rect x="10" y="82" width="64" height="64" fill="#fb8c00"/>
+      <rect x="82" y="82" width="64" height="64" fill="#e53935"/>
+      <rect x="154" y="82" width="64" height="64" fill="#fb8c00"/>
+      <rect x="10" y="154" width="64" height="64" fill="#e53935"/>
+      <rect x="82" y="154" width="64" height="64" fill="#fb8c00"/>
+      <rect x="154" y="154" width="64" height="64" fill="#e53935"/>
+    </g>
+    <!-- top face (white/yellow) -->
+    <g transform="matrix(0.866,0.5,-0.866,0.5,197.3,0)">
+      <rect x="0" y="0" width="228" height="228" fill="#10131c"/>
+      <rect x="10" y="10" width="64" height="64" fill="#f2f4f8"/>
+      <rect x="82" y="10" width="64" height="64" fill="#fdd835"/>
+      <rect x="154" y="10" width="64" height="64" fill="#f2f4f8"/>
+      <rect x="10" y="82" width="64" height="64" fill="#fdd835"/>
+      <rect x="82" y="82" width="64" height="64" fill="#f2f4f8"/>
+      <rect x="154" y="82" width="64" height="64" fill="#fdd835"/>
+      <rect x="10" y="154" width="64" height="64" fill="#f2f4f8"/>
+      <rect x="82" y="154" width="64" height="64" fill="#fdd835"/>
+      <rect x="154" y="154" width="64" height="64" fill="#f2f4f8"/>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <g font-family="DejaVu Sans, Arial, sans-serif">
+    <text x="580" y="262" font-size="118" font-weight="bold" fill="#f2f4f8" letter-spacing="-2">Cube<tspan fill="#22d3ee">Lab</tspan></text>
+    <text x="584" y="322" font-size="34" fill="#94a3b8">Rubik's Cube Solver &amp; Trainer</text>
+    <g font-size="25" fill="#cbd5e1">
+      <rect x="584" y="362" width="16" height="16" rx="4" fill="#22d3ee"/>
+      <text x="612" y="377">Animated 3D solver</text>
+      <rect x="584" y="404" width="16" height="16" rx="4" fill="#a78bfa"/>
+      <text x="612" y="419">Beginner guide &amp; verified algorithms</text>
+      <rect x="584" y="446" width="16" height="16" rx="4" fill="#fbbf24"/>
+      <text x="612" y="461">Timer, stats &amp; drills — offline-first</text>
+    </g>
+    <rect x="584" y="498" width="440" height="54" rx="27" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.7"/>
+    <text x="804" y="534" font-size="25" fill="#a5f3fc" text-anchor="middle">Free · No account · Open source</text>
+  </g>
+</svg>
