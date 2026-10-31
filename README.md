@@ -1,81 +1,47 @@
-![CubeLab banner](docs/banner.png)
+<div align="center">
+  <img src="docs/banner.png" alt="CubeLab — Rubik's Cube Solver & Speedcubing Trainer" width="100%" style="border-radius: 12px; margin-bottom: 16px;" />
 
-# CubeLab — Rubik's Cube Solver & Trainer
+  # 🎲 CubeLab — 3D Rubik's Cube Solver & Speedcubing Trainer
 
-A free, offline-first 3×3 web app: paint or scan your cube, get a solution with an
-animated 3D walkthrough, learn the beginner method, drill verified algorithms, and time
-your solves — no account, no server, your data never leaves the device.
+  **A free, offline-first 3×3 speedcubing laboratory: interactive 3D WebGL cube, Kociemba ≤21-move optimal solver, camera face scanning, verified algorithm library, drill engine, and WCA hold-to-start timer.**<br>
+  Runs 100% client-side with zero telemetry — your solve data never leaves your device.<br>
+  Part of the curated [linacre.site](https://www.linacre.site/) open-source ecosystem.
 
-**Live demo:** https://DLinacre.github.io/cubelab/
+  [![Live Web App](https://img.shields.io/badge/Live_Web_App-Interactive_3D_Lab-10b981?style=for-the-badge&logo=google-chrome&logoColor=white)](https://lin4cre.github.io/cubelab/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+  [![React 19](https://img.shields.io/badge/React-19-61dafb.svg?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+  [![Three.js](https://img.shields.io/badge/Three.js-0.186-049ef4.svg?style=flat-square&logo=three.js&logoColor=white)](https://threejs.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38bdf8.svg?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+  [![Vitest](https://img.shields.io/badge/Tests-73%20Passed-22c55e.svg?style=flat-square&logo=vitest&logoColor=white)](src/)
+  [![PWA](https://img.shields.io/badge/PWA-100%25%20Offline%20Ready-purple?style=flat-square)](#offline-pwa)
+</div>
 
-## Features
+---
 
-- **Solver** — enter a cube by painting a 2D net, pasting a scramble, applying moves,
-  scanning faces with the camera (with a mandatory verify-and-fix step), or shuffling
-  randomly. Real validation with beginner-friendly errors, then a Kociemba-class
-  ≤21-move solution or a stage-by-stage beginner solution, replayed on an animated 3D
-  cube with play/pause/step/scrub and speed control.
-- **Beginner guide** — searchable, step-by-step method with links into the library.
-- **Algorithm library** — every entry empirically verified against the engine
-  (2-look OLL/ESLL set, full PLL, F2L inserts). Search, filter by category, case/effect
-  diagrams, 3D demo, one-click drill.
-- **Drills** — algorithm practice with per-move mistake detection, hints, streaks and
-  flawless-run tracking.
-- **Timer** — hold-to-start speedcubing timer (Space / touch), WCA-style scrambles,
-  +2/DNF penalties, Ao5/Ao12/Ao50, session history.
-- **Stats** — single/Ao5 progress chart, time histogram, personal bests — all from your
-  real solve history.
-- **Offline PWA** — installable, works fully offline after the first visit.
-- **Local-first** — everything persists in `localStorage`; export/import/delete any time.
+## 🌐 Launch the 3D Studio Directly in Your Browser
 
-## Getting started
+👉 **[lin4cre.github.io/cubelab](https://lin4cre.github.io/cubelab/)**
 
-Requires Node.js 20+.
+- **Two-Phase Optimal Solver:** Computes sub-second solutions under 21 moves via Web Worker (Kociemba algorithm) or step-by-step layer-by-layer beginner explanations.
+- **Interactive 3D WebGL Playback:** Scrub forward and backward through move solutions with speed sliders and smooth rotational physics.
+- **Camera Scanning & Net Painter:** Point your webcam or phone camera at each facelet, or paint colors on an unfolded 2D net with automatic parity and edge validation.
+- **Verified Algorithm Library:** 2-Look OLL, full PLL, and F2L inserts with interactive move diagrams and mistake-highlighting practice drills.
+- **WCA-Calibrated Timer:** Hold spacebar or touch screen to arm, release to time, tracking Ao5, Ao12, session averages, and solve distribution histograms.
 
-```sh
-npm ci
-npm run dev        # local development
-npm test           # vitest suite (73 tests)
-npm run build      # typecheck + production build into dist/
-npm run preview    # serve the production build
+---
+
+## 🚀 Building & Testing Locally
+
+```bash
+git clone https://github.com/LIN4CRE/cubelab.git
+cd cubelab
+npm install
+npm test           # Runs 73 unit tests across engine & solvers
+npm run build      # Builds optimized PWA bundle
 ```
 
-The production build for GitHub Pages needs the repo base path:
+---
 
-```sh
-CUBELAB_BASE=/cubelab/ npm run build
-```
+## 📄 License
 
-## Architecture
-
-```
-src/
-  cube/        Pure engine: facelet/cubie model, moves, notation, validator,
-               scramble generator, random-state sampler. Zero dependencies.
-  solver/      Kociemba two-phase engine (min2phase, Web Worker + main-thread
-               fallback), beginner-method solver, cross table, worker client.
-  algorithms/  Verified library (PLL, OLL, F2L inserts), beginner curriculum,
-               case/effect state derivation.
-  app/         Zustand store (persisted), WCA stats helpers.
-  components/  React UI: 3D viewer (three.js), net editor, camera scan,
-               solve/guide/library/drill/timer/stats/settings panels.
-```
-
-Correctness rules: the 3D animation math is proven against the engine's move tables by
-test; every library algorithm is verified by applying it to real cube states in CI.
-See `src/components/cubeLayout.test.ts` and `src/algorithms/library.test.ts`.
-
-## Credits
-
-- Two-phase solver: [min2phase.js](https://github.com/cs0x7f/min2phase.js) by cs0x7f
-  (MIT/GPL-3.0), an implementation of Herbert Kociemba's two-phase algorithm.
-- Rendering: [three.js](https://threejs.org) (MIT) · State: [zustand](https://github.com/pmndrs/zustand) (MIT).
-- Beginner method follows the classic cross → corners → middle layer → top cross →
-  top face → corners → edges progression.
-
-Not affiliated with Rubik's®. The word "cubelab" artwork in `docs/` and `public/icons/`
-is original to this project.
-
-## License
-
-MIT — see [LICENSE](LICENSE).
+MIT © [David Linacre](https://github.com/LIN4CRE) · [linacre.site](https://www.linacre.site/)

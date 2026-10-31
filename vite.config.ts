@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // Base path for deployment. GitHub Pages project sites live under /<repo>/;
 // local dev and previews use '/'. Set CUBELAB_BASE=/cubelab/ when building.
-const base = process.env.CUBELAB_BASE ?? '/'
+const base = process.env.CUBELAB_BASE ?? './'
 
 // https://vite.dev/config/
 export default defineConfig({

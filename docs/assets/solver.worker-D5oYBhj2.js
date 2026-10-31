@@ -1,0 +1,1 @@
+function e(e){return new Worker(new URL(`solver.worker-B9pzD0DJ.js`,import.meta.url).href,{type:`module`,name:e?.name})}export{e as default};
